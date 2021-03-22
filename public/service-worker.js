@@ -1,4 +1,4 @@
-console log("Hello from gloriours and charming Service Worker!");
+console.log("Hello from gloriours and charming Service Worker!");
 
 const FILES_TO_CACHE = [
     
@@ -23,7 +23,7 @@ const DATA_CACHE_NAME = `data-cache-v1`;
 self.addEventListener(`install`, (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log(`Your files were pre-cached successfully!`);
+      console.log("Money my money");
       return cache.addAll(FILES_TO_CACHE);
     })
   );
