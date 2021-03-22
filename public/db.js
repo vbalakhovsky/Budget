@@ -52,15 +52,26 @@ store = transaction.objectStore(pendingObjectStoreName);
 
 store.clear();
 
+            });
 
-})
+        }       
+
+    };
+
+}
+
+function saveRecord (record) {
+
+const db = request.result;
+
+const transaction = db.transaction([pendingObjectStoreName], "readwrite");
+
+//access pending store
+const store = transaction.objectStore(pendingObjectStoreName);
+//add record
+store.add(record);
 
 }
 
-
-}
-
-
-
-
-}
+// when returns online change
+window.addEventListener("online", checkDatabase);
